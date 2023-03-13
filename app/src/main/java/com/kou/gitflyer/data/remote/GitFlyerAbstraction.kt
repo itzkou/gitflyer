@@ -14,4 +14,6 @@ interface GitFlyerAbstraction {
     @GET("users")
     suspend fun getUsers(@Header("Authorization") authToken: String,@Query("per_page")page:Int,@Query("since")since:Int):Response<List<User>>
 
+    @GET("users/{id}")
+    suspend fun getUser(@Header("Authorization") authToken: String,@Path("id") id: String): Response<User>
 }

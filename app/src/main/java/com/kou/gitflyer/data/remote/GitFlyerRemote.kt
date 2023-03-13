@@ -7,4 +7,8 @@ class GitFlyerRemote @Inject constructor(private val gitFlyerApi: GitFlyerAbstra
         getResource { gitFlyerApi.login(authToken) }
     suspend fun getUsers(authToken: String, page:Int, since:Int) =
         getResource { gitFlyerApi.getUsers(authToken,page,since) }
+    suspend fun getUser(authToken: String,id:String) =
+        getResource {
+            gitFlyerApi.getUser(authToken,id)
+        }
 }
