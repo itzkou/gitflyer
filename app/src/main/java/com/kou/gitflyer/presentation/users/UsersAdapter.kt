@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.kou.gitflyer.data.entity.User
 import com.kou.gitflyer.databinding.ItemUserBinding
 import javax.inject.Inject
@@ -30,11 +31,12 @@ class UsersAdapter @Inject constructor() :
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val ad = users[position]
+        val user = users[position]
 
 
         with(holder.binding) {
-
+            imUser.load(user.avatar_url)
+            username.text=user.login
         }
 
     }

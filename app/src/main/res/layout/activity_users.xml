@@ -7,7 +7,7 @@
     tools:context=".presentation.users.UsersActivity">
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/edSince"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -16,7 +16,7 @@
         android:ellipsize="end"
         android:ems="10"
         android:fontFamily="serif-monospace"
-        android:hint="size"
+        android:hint="since"
         android:inputType="number"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/edPage"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
@@ -38,8 +38,8 @@
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:textAlignment="textStart"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumber" />
+        app:layout_constraintStart_toEndOf="@+id/edSince"
+        app:layout_constraintTop_toTopOf="@+id/edSince" />
 
     <SearchView
         android:id="@+id/searchView"
@@ -55,24 +55,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnRefresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="monospace"
         android:text="Refresh"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber2"
+        app:layout_constraintBottom_toBottomOf="@+id/edPage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber2"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumber2" />
+        app:layout_constraintStart_toEndOf="@+id/edPage"
+        app:layout_constraintTop_toTopOf="@+id/edPage" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="587dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/rvUsers"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+       android:layout_margin="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+        app:layout_constraintTop_toBottomOf="@+id/edPage" />
 </androidx.constraintlayout.widget.ConstraintLayout>
