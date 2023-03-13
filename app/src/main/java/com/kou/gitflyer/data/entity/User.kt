@@ -1,6 +1,6 @@
 package com.kou.gitflyer.data.entity
 
-data class LoginResponse(
+data class User(
     val avatar_url: String,
     val bio: String,
     val blog: String,
