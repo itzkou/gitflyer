@@ -21,17 +21,17 @@ class GitFlyerRepo @Inject constructor(
         }.flowOn(ioDispatcher)
     }
 
-    override suspend fun getUsers(authToken: String, page: Int, since: Int): Flow<Resource<List<User>>?> {
+    override suspend fun getUsers( page: Int, since: Int): Flow<Resource<List<User>>?> {
         return flow {
-            val response = remote.getUsers(authToken,page, since)
+            val response = remote.getUsers(page, since)
             emit(response)
 
         }.flowOn(ioDispatcher)
     }
 
-    override suspend fun getUser(authToken: String, id: String): Flow<Resource<User>?> {
+    override suspend fun getUser( id: String): Flow<Resource<User>?> {
         return flow{
-            val response = remote.login(authToken)
+            val response = remote.getUser(id)
             emit(response)
         }.flowOn(ioDispatcher)
     }

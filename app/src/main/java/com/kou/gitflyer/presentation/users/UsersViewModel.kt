@@ -12,29 +12,22 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class UsersViewModel@Inject constructor(private val repository: GitFlyerRepoAbstraction,
-                                        private val prefsStore: PrefsStore
-) :ViewModel(){
+class UsersViewModel @Inject constructor(
+    private val repository: GitFlyerRepoAbstraction,
+    private val prefsStore: PrefsStore
+) : ViewModel() {
     private val _users = MutableLiveData<Resource<List<User>>>()
     val users = _users
     private val myToken = prefsStore.getToken()
 
-    fun getUsers(since:Int, page:Int) {
+    fun getUsers(since: Int, page: Int) {
 
         viewModelScope.launch {
-            myToken.collect{
-                it?.let {
-                    repository.getUsers(it,page,since).collect { response ->
-                        response?.let {
-                            _users.value = response
-                        }
-                    }
+            repository.getUsers(page, since).collect { response ->
+                response?.let {
+                    _users.value = response
                 }
-
             }
-
-
-
         }
 
     }

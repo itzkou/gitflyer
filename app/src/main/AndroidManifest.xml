@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Gitflyer"
         tools:targetApi="31">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".presentation.profile.ProfileActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

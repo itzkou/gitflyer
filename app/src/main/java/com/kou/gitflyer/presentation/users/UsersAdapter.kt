@@ -12,7 +12,7 @@ import javax.inject.Inject
 class UsersAdapter @Inject constructor() :
     RecyclerView.Adapter<UsersAdapter.ViewHolder>() {
 
-    private var UserItemClickListener: ((String) -> Unit)? = null
+    private var userItemClickListener: ((String) -> Unit)? = null
 
     private var users = listOf<User>()
 
@@ -38,6 +38,12 @@ class UsersAdapter @Inject constructor() :
             imUser.load(user.avatar_url)
             username.text=user.login
         }
+        holder.binding.root.setOnClickListener {
+            userItemClickListener?.let {  callback->
+                callback(user.login)
+            }
+        }
+
 
     }
 
@@ -51,7 +57,7 @@ class UsersAdapter @Inject constructor() :
     }
 
     fun setUserClickListener(callback: ((String) -> Unit)) {
-        this.UserItemClickListener = callback
+        this.userItemClickListener = callback
     }
 
 

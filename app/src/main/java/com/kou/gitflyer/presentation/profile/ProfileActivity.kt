@@ -29,9 +29,13 @@ class ProfileActivity : AppCompatActivity() {
         viewModel.user.observe(this) { resource ->
             when (resource.status) {
                 Resource.Status.SUCCESS -> {
-                    resource?.let {
-                        binding.imageView.load(resource.data
+                    resource?.let { user->
+                        binding.imageView.load(user.data
                             ?.avatar_url)
+                        binding.txusrname.text = user.data?.name
+                        binding.txfowooing.text = user.data?.following.toString()
+                        binding.txfolo.text = user.data?.following.toString()
+                        binding.txpubgist.text = user.data?.public_gists.toString()
                     }
                 }
                 Resource.Status.ERROR -> {

@@ -5,10 +5,10 @@ import javax.inject.Inject
 class GitFlyerRemote @Inject constructor(private val gitFlyerApi: GitFlyerAbstraction) : RetrofitSource() {
     suspend fun login(authToken: String) =
         getResource { gitFlyerApi.login(authToken) }
-    suspend fun getUsers(authToken: String, page:Int, since:Int) =
-        getResource { gitFlyerApi.getUsers(authToken,page,since) }
-    suspend fun getUser(authToken: String,id:String) =
+    suspend fun getUsers( page:Int, since:Int) =
+        getResource { gitFlyerApi.getUsers(page,since) }
+    suspend fun getUser(id:String) =
         getResource {
-            gitFlyerApi.getUser(authToken,id)
+            gitFlyerApi.getUser(id)
         }
 }
