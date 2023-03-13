@@ -7,6 +7,7 @@ A sample project for Android that shows a list of github users fetched from gith
 - SSOT concept
 - Coil,Lottie
 - Interface driven development, loose coupling between layers.
+- DiffUtils for recyclerview
 
 ## Things to consider  :
 
