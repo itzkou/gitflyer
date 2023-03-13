@@ -9,7 +9,7 @@ interface GitFlyerAbstraction {
 
     /** Get User **/
     @GET("user")
-    suspend fun getUser(@Header("Authorization") authToken: String="Bearer"): Response<LoginResponse>
+    suspend fun login(@Header("Authorization") authToken: String="Bearer"): Response<LoginResponse>
 
 
 }

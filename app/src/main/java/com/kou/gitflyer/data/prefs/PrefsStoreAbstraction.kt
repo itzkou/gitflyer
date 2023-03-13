@@ -10,5 +10,5 @@ interface PrefsStoreAbstraction {
 
 
     suspend fun setId(id: String)
-    suspend fun setFireToken(id: String)
+    suspend fun setToken(id: String)
 }

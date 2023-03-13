@@ -2,5 +2,6 @@
     <string name="app_name">gitflyer</string>
     <string name="hint_token">example: gHp_uogAO_6886$$_$$IUFHEIrpojpjpjpiF</string>
     <string name="headline_auth">Sign in with token to continue</string>
-    <string name="btn_continue">Continue</string>
+    <string name="btn_login">Login</string>
+
 </resources>

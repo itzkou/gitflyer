@@ -49,7 +49,7 @@ class PrefsStore @Inject constructor(appContext: Context) : PrefsStoreAbstractio
         }
     }
 
-    override suspend fun setFireToken(id: String) {
+    override suspend fun setToken(id: String) {
         dataStore.edit {
             it[PreferencesKeys.TOKEN] = id
         }

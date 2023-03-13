@@ -6,6 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface GitFlyerRepoAbstraction {
 
-    suspend fun getUser(authToken: String): Flow<Resource<LoginResponse>?>
+    suspend fun login(authToken: String): Flow<Resource<LoginResponse>?>
 
 }
