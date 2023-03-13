@@ -1,7 +1,5 @@
-# MovieRepoComposeApp
+# bitflyer-test 
 A sample project for Android that shows a list of github users fetched from github API.
-
-
 ## Development patterns, kits, languages & APIs:
 - Kotlin, Kotlin coroutines, Kotlin Flows for asynchronous programming.
 - Hilt for dependency management.
