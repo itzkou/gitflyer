@@ -18,7 +18,6 @@ class ProfileViewModel @Inject constructor(
 ) : ViewModel() {
     private val _user = MutableLiveData<Resource<User>>()
     val user = _user
-    private val myToken = prefsStore.getToken()
     private val login = prefsStore.getId()
 
 

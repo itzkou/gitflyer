@@ -3,8 +3,10 @@ package com.kou.gitflyer.presentation.users
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kou.gitflyer.databinding.ActivityUsersBinding
 import com.kou.gitflyer.presentation.auth.LoginViewModel
@@ -29,7 +31,6 @@ class UsersActivity : AppCompatActivity() {
         setupUi()
         loadInitialData()
         refreshData()
-
     }
 
 
@@ -71,11 +72,4 @@ class UsersActivity : AppCompatActivity() {
             viewModel.getUsers(binding.edSince.text.toString().toInt(),binding.edPage.text.toString().toInt())
         }
     }
-    private fun searchUser() {
-        binding.searchView.setOnClickListener {
-            //TODO search
-        }
-    }
-
-
 }

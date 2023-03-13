@@ -18,7 +18,7 @@ class UsersViewModel @Inject constructor(
 ) : ViewModel() {
     private val _users = MutableLiveData<Resource<List<User>>>()
     val users = _users
-    private val myToken = prefsStore.getToken()
+    private val _user = MutableLiveData<Resource<User>>()
 
     fun getUsers(since: Int, page: Int) {
 
@@ -37,4 +37,6 @@ class UsersViewModel @Inject constructor(
             prefsStore.setId(id)
         }
     }
+
+
 }
