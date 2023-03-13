@@ -1,5 +1,6 @@
 package com.kou.gitflyer.presentation.users
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kou.gitflyer.databinding.ActivityUsersBinding
 import com.kou.gitflyer.presentation.auth.LoginViewModel
+import com.kou.gitflyer.presentation.profile.ProfileActivity
 import com.kou.gitflyer.utils.Resource
 import com.kou.gitflyer.utils.coordinateBtnAndInputs
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,10 +39,10 @@ class UsersActivity : AppCompatActivity() {
             layoutManager =
                 LinearLayoutManager(this@UsersActivity, LinearLayoutManager.VERTICAL, false)
             usersAdapter.setUserClickListener {
-                //TODO navigation to details
+                viewModel.setId(it)
+                startActivity(Intent(this@UsersActivity,ProfileActivity::class.java))
             }
             adapter = usersAdapter
-
         }
 
     }

@@ -38,4 +38,10 @@ class UsersViewModel@Inject constructor(private val repository: GitFlyerRepoAbst
         }
 
     }
+
+    fun setId(id: String) {
+        viewModelScope.launch {
+            prefsStore.setId(id)
+        }
+    }
 }

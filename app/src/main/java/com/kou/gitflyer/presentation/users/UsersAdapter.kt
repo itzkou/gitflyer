@@ -45,7 +45,7 @@ class UsersAdapter @Inject constructor() :
 
     fun updateUsers(users: List<User>) {
         val diffResult =
-            DiffUtil.calculateDiff(SimpleCallback(this.users, users) { it.id })
+            DiffUtil.calculateDiff(SimpleCallback(this.users, users) { it.login })
         this.users = users
         diffResult.dispatchUpdatesTo(this)
     }
